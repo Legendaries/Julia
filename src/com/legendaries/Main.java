@@ -55,9 +55,10 @@ public class Main extends JFrame{
         
         public void generateImage(){
             int[] colors = new int[1000];
-            int black = 0x000000;
+            int black = (int)(System.nanoTime()/100000f);
+            System.out.println(black);
             for (int i = 0; i < 1000; i++) {
-                colors[i] = Color.HSBtoRGB(i / 256f, 1, i / (i + 4f));
+                colors[i] = Color.HSBtoRGB(i / 256f, 1, i / (i + 4f)) + black;
             }
             for(int i = 0; i < Main.WIDTH; i++)
                 for(int j = 0; j < Main.HEIGHT; j++){
